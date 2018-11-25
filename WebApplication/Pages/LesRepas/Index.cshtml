@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplication.Pages.LesRepas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Repas[0].DateRepas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repas[0].Repas1Navigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repas[0].AssistantNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repas[0].CookNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repas[0].VaissaileuxNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Repas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRepas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Repas1Navigation.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssistantNavigation.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CookNavigation.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VaissaileuxNavigation.Nom)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

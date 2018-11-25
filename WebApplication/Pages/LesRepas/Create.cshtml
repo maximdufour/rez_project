@@ -1,0 +1,50 @@
+﻿@page
+@model WebApplication.Pages.LesRepas.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Repas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Repas.Repas1" class="control-label"></label>
+                <select asp-for="Repas.Repas1" class ="form-control" asp-items="ViewBag.Repas1"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Repas.Cook" class="control-label"></label>
+                <select asp-for="Repas.Cook" class ="form-control" asp-items="ViewBag.Cook"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Repas.Assistant" class="control-label"></label>
+                <select asp-for="Repas.Assistant" class ="form-control" asp-items="ViewBag.Assistant"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Repas.Vaissaileux" class="control-label"></label>
+                <select asp-for="Repas.Vaissaileux" class ="form-control" asp-items="ViewBag.Vaissaileux"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Repas.DateRepas" class="control-label"></label>
+                <input asp-for="Repas.DateRepas" value="@DateTime.Now.ToString("s")" class="form-control" />
+                <span asp-validation-for="Repas.DateRepas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
