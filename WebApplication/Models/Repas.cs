@@ -12,21 +12,26 @@ namespace WebApplication.Models
         }
 
         [Display(Name = "Identifiant")]
+        [Required]
         public int Id { get; set; }
 
         [Display(Name = "Type de repas")]
+        [Required]
         public int Repas1 { get; set; }
 
         [Display(Name = "Cook")]
+        [Required]
         public int Cook { get; set; }
 
         [Display(Name = "L'assistant")]
         public int? Assistant { get; set; }
 
         [Display(Name = "Vaissaileux")]
+        [Required]
         public int Vaissaileux { get; set; }
 
         [Display(Name = "Date du repas")]
+        [Required]
         public DateTime DateRepas { get; set; }
 
         [Display(Name = "Assistant")]

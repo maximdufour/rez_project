@@ -12,8 +12,12 @@ namespace WebApplication.Models
         }
 
         [Display(Name = "Identifiant")]
+        [Required]
         public int Id { get; set; }
+
         [Display(Name = "Nom")]
+        [MaxLength(10)]
+        [Required]
         public string Nom { get; set; }
 
         [Display(Name = "Repas")]

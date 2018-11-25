@@ -15,21 +15,29 @@ namespace WebApplication.Models
         }
 
         [Display(Name = "Identifiant")]
+        [Required]
         public int Id { get; set; }
 
         [Display(Name = "Nom")]
+        [MaxLength(20)]
+        [Required]
         public string Nom { get; set; }
 
         [Display(Name = "Solde ($)")]
+        [Required]
         public int Solde { get; set; }
 
         [Display(Name = "Statistique de perte ($)")]
         public int? StatPerte { get; set; }
 
         [Display(Name = "Usager")]
+        [MaxLength(20)]
+        [Required]
         public string Usager { get; set; }
 
         [Display(Name = "Mot de passe")]
+        [MaxLength(20)]
+        [Required]
         public string Mdp { get; set; }
 
         [Display(Name = "L'assistant du repas")]
