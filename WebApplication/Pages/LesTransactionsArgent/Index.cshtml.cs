@@ -24,7 +24,9 @@ namespace WebApplication.Pages.LesTransactionsArgent
         {
             TransactionArgent = await _context.TransactionArgent
                 .Include(t => t.JoueurNavigation)
-                .Include(t => t.RepasNavigation).ToListAsync();
+                .Include(t => t.RepasNavigation)
+                .Include(t => t.RepasNavigation.Repas1Navigation)
+                .ToListAsync();
         }
     }
 }

@@ -32,11 +32,12 @@
                 @Html.DisplayFor(modelItem => item.Montant)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JoueurNavigation.Mdp)
+                @Html.DisplayFor(modelItem => item.JoueurNavigation.Nom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RepasNavigation.Id)
-            </td>
+                @{ var identity = $"{item.RepasNavigation.DateRepas} | {item.RepasNavigation.Repas1Navigation.Nom}"; }
+                @Html.DisplayFor(modelItem => identity)
+            </td> 
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |

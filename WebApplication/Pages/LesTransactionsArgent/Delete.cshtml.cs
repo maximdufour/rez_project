@@ -30,7 +30,9 @@ namespace WebApplication.Pages.LesTransactionsArgent
 
             TransactionArgent = await _context.TransactionArgent
                 .Include(t => t.JoueurNavigation)
-                .Include(t => t.RepasNavigation).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(t => t.RepasNavigation)
+                .Include(t => t.RepasNavigation.Repas1Navigation)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (TransactionArgent == null)
             {

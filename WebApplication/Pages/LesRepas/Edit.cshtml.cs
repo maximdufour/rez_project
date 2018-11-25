@@ -39,10 +39,10 @@ namespace WebApplication.Pages.LesRepas
             {
                 return NotFound();
             }
-           ViewData["Assistant"] = new SelectList(_context.Joueurs, "Id", "Mdp");
-           ViewData["Cook"] = new SelectList(_context.Joueurs, "Id", "Mdp");
+           ViewData["Assistant"] = new SelectList(_context.Joueurs, "Id", "Nom");
+           ViewData["Cook"] = new SelectList(_context.Joueurs, "Id", "Nom");
            ViewData["Repas1"] = new SelectList(_context.TypeRepas, "Id", "Nom");
-           ViewData["Vaissaileux"] = new SelectList(_context.Joueurs, "Id", "Mdp");
+           ViewData["Vaissaileux"] = new SelectList(_context.Joueurs, "Id", "Nom");
             return Page();
         }
 

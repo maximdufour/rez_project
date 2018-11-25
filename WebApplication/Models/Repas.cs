@@ -22,5 +22,7 @@ namespace WebApplication.Models
         public TypeRepas Repas1Navigation { get; set; }
         public Joueurs VaissaileuxNavigation { get; set; }
         public ICollection<TransactionArgent> TransactionArgent { get; set; }
+
+        public string Identity => $"{this.DateRepas} | {this.Repas1Navigation.Nom}";
     }
 }

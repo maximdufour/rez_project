@@ -17,13 +17,13 @@
                 @Html.DisplayNameFor(model => model.Repas[0].DateRepas)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Repas[0].Repas1Navigation)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Repas[0].AssistantNavigation)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Repas[0].CookNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Repas[0].Repas1Navigation)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Repas[0].VaissaileuxNavigation)
@@ -38,16 +38,16 @@
                 @Html.DisplayFor(modelItem => item.DateRepas)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AssistantNavigation.Mdp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CookNavigation.Mdp)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Repas1Navigation.Nom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VaissaileuxNavigation.Mdp)
+                @Html.DisplayFor(modelItem => item.AssistantNavigation.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CookNavigation.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VaissaileuxNavigation.Nom)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

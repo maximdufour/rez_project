@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using WebApplication.Models;
 
 namespace WebApplication.Pages.LesTransactionsArgent
@@ -20,8 +21,9 @@ namespace WebApplication.Pages.LesTransactionsArgent
 
         public IActionResult OnGet()
         {
-        ViewData["Joueur"] = new SelectList(_context.Joueurs, "Id", "Mdp");
-        ViewData["Repas"] = new SelectList(_context.Repas, "Id", "Id");
+            ViewData["Joueur"] = new SelectList(_context.Joueurs, "Id", "Nom");
+            ViewData["Repas"] = new SelectList(_context.Repas.Include(t => t.Repas1Navigation), "Id", "Identity");
+
             return Page();
         }
 
