@@ -19,6 +19,12 @@
             @Html.DisplayFor(model => model.Repas.DateRepas)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Repas.Repas1Navigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Repas.Repas1Navigation.Nom)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Repas.AssistantNavigation)
         </dt>
         <dd>
@@ -29,12 +35,6 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Repas.CookNavigation.Nom)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Repas.Repas1Navigation)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Repas.Repas1Navigation.Nom)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Repas.VaissaileuxNavigation)
